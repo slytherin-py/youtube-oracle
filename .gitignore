@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/*.db
+data/*.db-journal
+.DS_Store
+node_modules/
+dist/
+.ipynb_checkpoints/
+
+data/*.log
+
+data/*.log
