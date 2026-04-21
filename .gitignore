@@ -13,3 +13,7 @@ dist/
 data/*.log
 
 data/*.log
+
+data/kaggle/
+
+models/*.pkl
