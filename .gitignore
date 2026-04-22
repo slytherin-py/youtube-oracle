@@ -16,6 +16,4 @@ data/*.log
 
 data/kaggle/
 
-models/*.pkl
-
 notebooks/models/
