@@ -168,7 +168,7 @@ export default function App() {
                     <ReferenceLine x={0} stroke="#525252" />
                     <Tooltip
                       contentStyle={{ background: "#171717", border: "1px solid #404040", borderRadius: 8 }}
-                      formatter={(v: number) => v.toFixed(3)}
+                      formatter={(v) => (typeof v === "number" ? v.toFixed(3) : String(v))}
                     />
                     <Bar dataKey="shap">
                       {chartData.map((d, i) => (
@@ -233,3 +233,4 @@ function AboutPanel() {
     </div>
   );
 }
+
