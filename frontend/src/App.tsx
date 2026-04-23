@@ -73,7 +73,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <TrendingUp className="w-6 h-6 text-emerald-400" />
-            <h1 className="text-xl font-semibold tracking-tight">Play Oracle</h1>
+            <h1 className="text-xl font-semibold tracking-tight">YouTube Oracle</h1>
           </div>
           <button
             onClick={() => setShowAbout(!showAbout)}
@@ -93,7 +93,7 @@ export default function App() {
             Will this video go viral?
           </h2>
           <p className="text-neutral-400 max-w-xl mx-auto">
-            Paste any Play URL. An XGBoost model predicts virality probability and shows you exactly which features influenced the call.
+            Paste any YouTube URL. An XGBoost model predicts virality probability and shows you exactly which features influenced the call.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function App() {
               value={url}
               onChange={e => setUrl(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handlePredict()}
-              placeholder="https://www.Play.com/watch?v=..."
+              placeholder="https://www.youtube.com/watch?v=..."
               className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
             />
           </div>
