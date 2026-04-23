@@ -189,11 +189,26 @@ export default function App() {
       </main>
 
       <footer className="border-t border-neutral-800 mt-20">
-        <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-neutral-500 flex justify-between">
-          <span>Play Oracle · v0.1 · Trained on Kaggle 2017-18</span>
-          <a href="https://github.com/slytherin-py/Play-oracle" className="hover:text-neutral-300" target="_blank" rel="noreferrer">
-            GitHub →
-          </a>
+        <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-neutral-500 flex justify-between items-center">
+          <span>YouTube Oracle · v0.1 · Trained on Kaggle 2017-18</span>
+          <div className="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/mohammed-saleeq-sunil"
+              className="hover:text-neutral-300"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn →
+            </a>
+            <a
+              href="https://github.com/slytherin-py/youtube-oracle"
+              className="hover:text-neutral-300"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub →
+            </a>
+          </div>
         </div>
       </footer>
     </div>
@@ -207,30 +222,29 @@ function AboutPanel() {
       <div>
         <div className="font-medium text-neutral-200 mb-1">What it does</div>
         <p className="text-neutral-400">
-          Predicts whether a Play video will cross a virality threshold, given only features available before the fact: title, channel size, category, publish timing, and early engagement ratios.
+          Predicts whether a YouTube video will cross a virality threshold, given only features available before the fact: title, channel size, category, publish timing, and early engagement ratios.
         </p>
       </div>
       <div>
         <div className="font-medium text-neutral-200 mb-1">How it was trained</div>
         <p className="text-neutral-400">
-          XGBoost classifier trained on 6,351 US videos from the Kaggle Trending Play dataset (2017-18). 80/20 time-based split to prevent leakage — train on older, test on newer. Holdout AUC 0.954, PR-AUC 0.975.
+          XGBoost classifier trained on 6,351 US videos from the Kaggle Trending YouTube dataset (2017-18). 80/20 time-based split to prevent leakage — train on older, test on newer. Holdout AUC 0.954, PR-AUC 0.975.
         </p>
       </div>
       <div>
         <div className="font-medium text-neutral-200 mb-1">Known limitations</div>
         <ul className="text-neutral-400 list-disc list-inside space-y-1">
-          <li>Training data is from 2017-18. Play's algorithm and audience have changed since.</li>
-          <li>Play hid public dislike counts in 2021, so that feature is always zero now. The model was trained with it, so it adjusts in a way that's slightly miscalibrated for recent videos.</li>
+          <li>Training data is from 2017-18. YouTube's algorithm and audience have changed since.</li>
+          <li>YouTube hid public dislike counts in 2021, so that feature is always zero now. The model was trained with it, so it adjusts in a way that's slightly miscalibrated for recent videos.</li>
           <li>Current "views" at scoring time leaks future information for old videos. v1 will retrain on live-captured early-hour snapshots to fix this.</li>
         </ul>
       </div>
       <div>
         <div className="font-medium text-neutral-200 mb-1">What's next</div>
         <p className="text-neutral-400">
-          A live data pipeline is collecting hourly trending videos. Once enough labeled snapshots accumulate, the model retrains on early-lifecycle features only — at which point accuracy will drop to a more honest 0.78-0.85 AUC range, and predictions will be calibrated on today's Play rather than 2018's.
+          A live data pipeline is collecting hourly trending videos. Once enough labeled snapshots accumulate, the model retrains on early-lifecycle features only — at which point accuracy will drop to a more honest 0.78-0.85 AUC range, and predictions will be calibrated on today's YouTube rather than 2018's.
         </p>
       </div>
     </div>
   );
 }
-
